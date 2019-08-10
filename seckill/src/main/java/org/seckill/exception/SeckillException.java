@@ -2,6 +2,7 @@ package org.seckill.exception;
 
 /**
  * 秒杀相关业务异常
+ *
  * @Auther: LXS
  * @Date: 2019-3-18
  * @Description: org.seckill.exception

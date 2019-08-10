@@ -1,8 +1,6 @@
 package org.seckill.entity;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import java.util.Date;
 

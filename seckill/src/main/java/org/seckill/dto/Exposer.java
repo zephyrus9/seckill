@@ -2,6 +2,7 @@ package org.seckill.dto;
 
 /**
  * 暴露秒杀地址接口
+ *
  * @Auther: LXS
  * @Date: 2019-3-18
  * @Description: org.seckill.dto
@@ -33,7 +34,7 @@ public class Exposer {
         this.seckillId = seckillId;
     }
 
-    public Exposer(boolean exposed,long seckillId, long now, long start, long end) {
+    public Exposer(boolean exposed, long seckillId, long now, long start, long end) {
         this.exposed = exposed;
         this.seckillId = seckillId;
         this.now = now;

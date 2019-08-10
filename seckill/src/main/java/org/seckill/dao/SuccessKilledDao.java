@@ -1,10 +1,7 @@
 package org.seckill.dao;
 
 import org.apache.ibatis.annotations.Param;
-import org.seckill.entity.Seckill;
 import org.seckill.entity.SuccessKilled;
-
-import java.util.List;
 
 /**
  * @Auther: LXS
