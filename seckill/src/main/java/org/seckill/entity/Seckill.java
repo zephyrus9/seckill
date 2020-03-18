@@ -5,6 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
+ * @author Administrator
  * @Auther: LXS
  * @Date: 2019-8-11
  * @Description: org.seckill.entity
