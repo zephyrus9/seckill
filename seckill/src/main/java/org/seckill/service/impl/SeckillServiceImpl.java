@@ -32,7 +32,7 @@ import java.util.List;
 @Service
 public class SeckillServiceImpl implements SeckillService {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger LOGGER = LoggerFactory.getLogger(SeckillServiceImpl.class);
 
     //注入Service依赖
     @Autowired
@@ -41,7 +41,9 @@ public class SeckillServiceImpl implements SeckillService {
     @Autowired
     private SuccessKilledDao successKilledDao;
 
-    //md5盐值字符串，用于混淆MD5
+    /**
+     * md5盐值字符串，用于混淆MD5
+     */
     private final String slat = "asdfdadsf8f6asd";
 
     @Override
@@ -65,9 +67,9 @@ public class SeckillServiceImpl implements SeckillService {
         //系统当前时间
         Date nowTime = new Date();
         if (nowTime.getTime() < startTime.getTime() || nowTime.getTime() > endTime.getTime()) {
-            logger.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + nowTime.getTime());
-            logger.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + startTime.getTime());
-            logger.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + endTime.getTime());
+            LOGGER.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + nowTime.getTime());
+            LOGGER.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + startTime.getTime());
+            LOGGER.info("[SeckillServiceImpl]+++++++++++++++++++++++++++nowTime.getTime()" + endTime.getTime());
             return new Exposer(false, seckillId, nowTime.getTime(), startTime.getTime(), endTime.getTime());
         }
         //转发特定字符串的过程，不可逆
@@ -114,7 +116,7 @@ public class SeckillServiceImpl implements SeckillService {
         } catch (RepeatKillException e2) {
             throw e2;
         } catch (Exception e) {
-            logger.error(e.getMessage(), e);
+            LOGGER.error(e.getMessage(), e);
             //将所有编译期异常 转化为运行期异常
             throw new SeckillException("seckill inner error:" + e.getLocalizedMessage());
         }

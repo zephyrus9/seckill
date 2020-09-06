@@ -10,16 +10,25 @@ package org.seckill.dto;
  */
 public class Exposer {
 
-    //是否开启秒杀
+
+    /**
+     * 是否开启秒杀
+     */
     private boolean exposed;
 
-    //加密措施
+    /**
+     * 加密措施
+     */
     private String md5;
 
-    // id
+    /**
+     * id
+     */
     private long seckillId;
 
-    //系统当前时间(毫秒)
+    /**
+     * 系统当前时间(毫秒)
+     */
     private long now;
 
     //开启时间
